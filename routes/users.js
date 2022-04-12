@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
+const {getAll}=require('../controllers/users.controllers')
+let middelware= require('../middelware/jwt.middelware');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
 
+router.get('/',getAll);
+router.post('/',getAll);
 module.exports = router;
